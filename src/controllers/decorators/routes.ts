@@ -1,9 +1,14 @@
 import "reflect-metadata";
 import { HttpMethods, MetadataKeys } from "./enums";
+import { RouteHandlerDescriptor } from "./interfaces";
 
 export function routeBinder(httpMethod: string) {
   return function(path: string) {
-    return function(target: any, key: string, descriptor: PropertyDescriptor) {
+    return function(
+      target: any,
+      key: string,
+      descriptor: RouteHandlerDescriptor
+    ) {
       Reflect.defineMetadata(MetadataKeys.Path, path, target, key);
       Reflect.defineMetadata(MetadataKeys.HttpMethod, httpMethod, target, key);
     };
