@@ -16,6 +16,11 @@ export class AppController {
   @Get("/protected")
   @Use(requireAuth)
   protected(req: Request, res: Response) {
-    res.send("<h1>PROTECTED PART OF THE SYSTEM!!!!</h1>");
+    res.send(`
+    <div>
+    <h1>PROTECTED PART OF THE SYSTEM!!!!</h1>
+    <a href="/">Home</a>
+    </div>
+    `);
   }
 }

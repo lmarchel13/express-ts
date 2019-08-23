@@ -18,6 +18,7 @@ export const loggedIn = `
     <div>
         <div><h1>You are logged in!</h1></div>
         <a href="/auth/logout">Logout</a>
+        <a href="/protected">Protected</a>
     </div>
 `;
 
