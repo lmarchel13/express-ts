@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 import { Controller, Get, Use } from "./decorators";
 import { requireAuth } from "../middlewares";
 
-@Controller("/")
+@Controller("")
 export class AppController {
   @Get("/")
   index(req: Request, res: Response) {
